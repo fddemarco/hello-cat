@@ -1,3 +1,11 @@
+import { useState } from 'react'
+
 export function App () {
-  return <h1>Hello Cat!</h1>
+  const [fact, useFact] = useState('Lorem, ipsum dolor sit amet consectetur adipisicing elit.')
+  return (
+    <main>
+      <h1>Hello Cat!</h1>
+      <p>{fact}</p>
+    </main>
+  )
 }
