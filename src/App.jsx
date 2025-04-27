@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 
-const CATFACT_ENDPOINT = 'https://catfact.ninja/fact'
+import fetchRandomFact from './core/catfactService'
 
 export function App () {
   const [fact, setFact] = useState()
   useEffect(() => {
-    fetch(CATFACT_ENDPOINT)
-      .then(res => res.json())
-      .then(data => setFact(data.fact))
+    fetchRandomFact(setFact)
   }, [])
+
   return (
     <main>
       <h1>Hello Cat!</h1>
