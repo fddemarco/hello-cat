@@ -14,7 +14,7 @@ export function App () {
   useEffect(() => {
     if (fact) {
       fetchCatSays(fact)
-        .then(url => setImageURL(url))
+        .then(newImageURL => setImageURL(newImageURL))
     }
   }, [fact])
 
