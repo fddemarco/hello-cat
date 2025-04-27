@@ -9,11 +9,15 @@ export function App () {
 
   useEffect(() => {
     fetchRandomFact(setFact)
-    fetchCatSays(fact)
-      .then(res => res.blob())
-      .then(blob => URL.createObjectURL(blob))
-      .then(url => setImageURL(url))
   }, [])
+  useEffect(() => {
+    if (fact) {
+      fetchCatSays(fact)
+        .then(res => res.blob())
+        .then(blob => URL.createObjectURL(blob))
+        .then(url => setImageURL(url))
+    }
+  }, [fact])
 
   return (
     <main>
