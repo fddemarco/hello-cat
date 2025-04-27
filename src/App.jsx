@@ -8,7 +8,8 @@ export function App () {
   const [imageURL, setImageURL] = useState()
 
   useEffect(() => {
-    fetchRandomFact(setFact)
+    fetchRandomFact()
+      .then(newFact => setFact(newFact))
   }, [])
   useEffect(() => {
     if (fact) {
