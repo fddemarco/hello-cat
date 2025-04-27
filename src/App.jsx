@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const CATFACT_ENDPOINT = 'https://catfact.ninja/fact'
 
 export function App () {
-  const [fact, setFact] = useState('Lorem, ipsum dolor sit amet consectetur adipisicing elit.')
+  const [fact, setFact] = useState()
   useEffect(() => {
     fetch(CATFACT_ENDPOINT)
       .then(res => res.json())
@@ -12,7 +12,7 @@ export function App () {
   return (
     <main>
       <h1>Hello Cat!</h1>
-      <p>{fact}</p>
+      {fact && <p>{fact}</p>}
     </main>
   )
 }
